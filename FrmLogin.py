@@ -46,6 +46,7 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.txtContrasena.setFont(font)
         self.txtContrasena.setObjectName("txtContrasena")
+        self.txtContrasena.setEchoMode(QtWidgets.QLineEdit.Password)
         self.btnCancelar = QtWidgets.QPushButton(self.centralwidget)
         self.btnCancelar.setGeometry(QtCore.QRect(190, 250, 121, 31))
         font = QtGui.QFont()
