@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmMenu</class>
+ <widget class="QMainWindow" name="FrmMenu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1099</width>
+    <height>826</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sistema de encriptación de archivos</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1099</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEncriptar">
+    <property name="title">
+     <string>Encriptar </string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuDesencriptar">
+    <property name="title">
+     <string>Desencriptar</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuOpciones">
+    <property name="title">
+     <string>Opciones</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+   </widget>
+   <addaction name="menuEncriptar"/>
+   <addaction name="menuDesencriptar"/>
+   <addaction name="menuOpciones"/>
+   <addaction name="menuAyuda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
