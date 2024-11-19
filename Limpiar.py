@@ -27,3 +27,4 @@ class Limpiar(QtWidgets.QMainWindow, Ui_FrmLimpiar):
         
     def limpiar(self):
         self.label_4.clear()
+        self.txt_mensaje.clear()
