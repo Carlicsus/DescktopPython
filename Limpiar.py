@@ -2,6 +2,8 @@ from FrmLimpiar import *
 from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
+from PyQt5.QtWidgets import QFileDialog  # Importa QFileDialog para abrir archivos
+
 
 class Limpiar(QtWidgets.QMainWindow, Ui_FrmLimpiar):
     def __init__(self, *args, **kwargs):
@@ -10,6 +12,10 @@ class Limpiar(QtWidgets.QMainWindow, Ui_FrmLimpiar):
         
         self.btn_encriptar.clicked.connect(self.encriptarAES)
         self.btn_limpiar.clicked.connect(self.limpiar)
+        self.btn_cargar.clicked.connect(self.cargarArchivo)  # Conectar el botón con la función cargarArchivo
+        self.btn_save.clicked.connect(self.guardarArchivo)  # Conectar el botón con la función guardarArchivo
+
+
         
     def encriptarAES(self):
         data= self.txt_mensaje.toPlainText()
@@ -28,3 +34,32 @@ class Limpiar(QtWidgets.QMainWindow, Ui_FrmLimpiar):
     def limpiar(self):
         self.label_4.clear()
         self.txt_mensaje.clear()
+
+    def cargarArchivo(self):
+        # Abre un diálogo para seleccionar un archivo .txt
+        opciones = QFileDialog.Options()
+        archivo, _ = QFileDialog.getOpenFileName(self, "Abrir archivo", "", "Archivos de texto (*.txt);;Todos los archivos (*)", options=opciones)
+
+        if archivo:
+            # Si se seleccionó un archivo, abrirlo y leer su contenido
+            with open(archivo, 'r', encoding='utf-8') as f:
+                contenido = f.read()
+                self.txt_mensaje.setText(contenido)
+                
+    def guardarArchivo(self):
+        # Obtenemos el texto encriptado de la label_4
+        texto_encriptado = self.label_4.text()
+
+        if not texto_encriptado:
+            # Si no hay texto encriptado en el label, mostramos un mensaje
+            QtWidgets.QMessageBox.warning(self, "Advertencia", "No hay texto encriptado para guardar.")
+            return
+
+        # Abre un diálogo para guardar el archivo .txt
+        opciones = QFileDialog.Options()
+        archivo, _ = QFileDialog.getSaveFileName(self, "Guardar archivo", "", "Archivos de texto (*.txt);;Todos los archivos (*)", options=opciones)
+
+        if archivo:
+            # Si se seleccionó una ruta de archivo, guardar el texto encriptado en el archivo
+            with open(archivo, 'w', encoding='utf-8') as f:
+                f.write(texto_encriptado)  # Escribe el texto encriptado en el archivo
