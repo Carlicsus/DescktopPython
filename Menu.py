@@ -13,3 +13,4 @@ class Menu(QtWidgets.QMainWindow, Ui_FrmMenu):
         openNewWindow = Limpiar(self)
         openNewWindow.show()
         self.hide()
+        
