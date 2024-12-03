@@ -24,119 +24,17 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
-      <string>Desencriptar Texto</string>
+      <string>Encriptar Imagen</string>
      </attribute>
-     <widget class="QPushButton" name="btn_desencriptar">
+     <widget class="QPushButton" name="btnLimpiarImg">
       <property name="geometry">
        <rect>
-        <x>600</x>
-        <y>50</y>
-        <width>181</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Desencriptar</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>img/encriptar_shell.png</normaloff>img/encriptar_shell.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>10</y>
-        <width>191</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Mensaje Encriptado</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_cargar">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>130</y>
-        <width>181</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Cargar Archivo</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>img/cargar.png</normaloff>img/cargar.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_save">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>170</y>
-        <width>181</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Guardar archivo</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>img/save.png</normaloff>img/save.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn_limpiar">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>90</y>
+        <x>30</x>
+        <y>330</y>
         <width>181</width>
         <height>31</height>
        </rect>
@@ -160,25 +58,77 @@
        </size>
       </property>
      </widget>
-     <widget class="QLabel" name="label_4">
+     <widget class="QPushButton" name="btnSaveImagen">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>310</y>
-        <width>391</width>
-        <height>141</height>
+        <x>30</x>
+        <y>410</y>
+        <width>181</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Guardar archivo</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>img/save.png</normaloff>img/save.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TxtImgNormal">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>311</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Imagen Normal</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ImgNormal">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>311</width>
+        <height>181</height>
        </rect>
       </property>
       <property name="text">
-       <string/>
+       <string>Aun no has cargado ninguna imagen</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_3">
+     <widget class="QPushButton" name="btnEncriptarImg">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>260</y>
-        <width>231</width>
+        <x>30</x>
+        <y>290</y>
+        <width>181</width>
         <height>31</height>
        </rect>
       </property>
@@ -188,17 +138,101 @@
        </font>
       </property>
       <property name="text">
-       <string>Mensaje Desencriptado</string>
+       <string>Encriptar</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>img/encriptar_shell.png</normaloff>img/encriptar_shell.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
       </property>
      </widget>
-     <widget class="QTextEdit" name="txt_mensaje">
+     <widget class="QLabel" name="IconFlecha">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>50</y>
-        <width>521</width>
-        <height>191</height>
+        <x>340</x>
+        <y>120</y>
+        <width>91</width>
+        <height>81</height>
        </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>img/flecha-correcta.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ImgEncriptada">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>70</y>
+        <width>311</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Aun no has desencriptado ninguna imagen</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TxtImgEncrip">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>20</y>
+        <width>311</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Imagen Encriptada</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnCargarImg">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>370</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Cargar Archivo</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>img/cargar.png</normaloff>img/cargar.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
       </property>
      </widget>
     </widget>
@@ -206,7 +240,7 @@
      <attribute name="title">
       <string>Desencriptar Imagen</string>
      </attribute>
-     <widget class="QPushButton" name="btnSaveImagen">
+     <widget class="QPushButton" name="btnSaveImagen2">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -234,7 +268,7 @@
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="btnCargarImg">
+     <widget class="QPushButton" name="btnCargarImg2">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -332,7 +366,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="btnLimpiarImg">
+     <widget class="QPushButton" name="btnLimpiarImg2">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -360,7 +394,7 @@
        </size>
       </property>
      </widget>
-     <widget class="QLabel" name="IconFlecha">
+     <widget class="QLabel" name="IconFlecha2">
       <property name="geometry">
        <rect>
         <x>330</x>
@@ -379,7 +413,7 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="ImgEncriptada">
+     <widget class="QLabel" name="ImgEncriptada2">
       <property name="geometry">
        <rect>
         <x>20</x>
