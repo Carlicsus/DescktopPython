@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>FrmLimpiar</class>
- <widget class="QMainWindow" name="FrmLimpiar">
+ <class>Desincriptar</class>
+ <widget class="QMainWindow" name="Desincriptar">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>801</width>
+    <width>800</width>
     <height>600</height>
    </rect>
   </property>
@@ -28,9 +28,9 @@
     </property>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
-      <string>Encriptar Texto</string>
+      <string>Desencriptar Texto</string>
      </attribute>
-     <widget class="QPushButton" name="btn_encriptar">
+     <widget class="QPushButton" name="btn_desencriptar">
       <property name="geometry">
        <rect>
         <x>600</x>
@@ -45,7 +45,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Encriptar</string>
+       <string>Desencriptar</string>
       </property>
       <property name="icon">
        <iconset>
@@ -63,7 +63,7 @@
        <rect>
         <x>20</x>
         <y>10</y>
-        <width>101</width>
+        <width>191</width>
         <height>31</height>
        </rect>
       </property>
@@ -73,7 +73,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Mensaje</string>
+       <string>Mensaje Encriptado</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btn_cargar">
@@ -188,7 +188,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Mensaje Encriptado</string>
+       <string>Mensaje Desencriptado</string>
       </property>
      </widget>
      <widget class="QTextEdit" name="txt_mensaje">
@@ -204,7 +204,7 @@
     </widget>
     <widget class="QWidget" name="tab_6">
      <attribute name="title">
-      <string>Encriptar Imagen</string>
+      <string>Desencriptar Imagen</string>
      </attribute>
     </widget>
    </widget>
@@ -214,16 +214,10 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>801</width>
+     <width>800</width>
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuEncriptar">
-    <property name="title">
-     <string>Encriptar</string>
-    </property>
-   </widget>
-   <addaction name="menuEncriptar"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

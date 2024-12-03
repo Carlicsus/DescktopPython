@@ -1,4 +1,4 @@
-from FrmLimpiar import *
+from FrmDesencriptar import *
 from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
@@ -7,36 +7,47 @@ from datetime import *
 import base64
 
 
-
-class Limpiar(QtWidgets.QMainWindow, Ui_FrmLimpiar):
+class Desencriptar(QtWidgets.QMainWindow, Ui_Desincriptar):
     def __init__(self, *args, **kwargs):
         QtWidgets.QMainWindow.__init__(self,*args,**kwargs)
         self.setupUi(self)
         
-        self.btn_encriptar.clicked.connect(self.encriptarAES)
+        self.btn_desencriptar.clicked.connect(self.desencriptarAES)
         self.btn_limpiar.clicked.connect(self.limpiar)
         self.btn_cargar.clicked.connect(self.cargarArchivo)  # Conectar el botón con la función cargarArchivo
         self.btn_save.clicked.connect(self.guardarArchivo)  # Conectar el botón con la función guardarArchivo
-
-
         
-    def encriptarAES(self):
-        data= self.txt_mensaje.toPlainText()
+    def desencriptarAES(self):
+        # Obtener el texto encriptado desde el label_4
+        b64_ciphertext = self.txt_mensaje.toPlainText()
 
-        key= b"12345678912345678912345678912345" #32
-        iv = b"TI_UTXJ2024ENCRI"
-        
-        padder= padding.PKCS7(128).padder()
-        padded_data = padder.update(data.encode('utf-8'))
-        padded_data += padder.finalize()
-        cipher = Cipher(algorithms.AES(key),modes.CBC(iv), backend = default_backend())
-        encryptor = cipher.encryptor()
-        ciphertext = encryptor.update(padded_data)+encryptor.finalize()
-        # Convertir el resultado en Base64 para poder manejarlo como texto
-        b64_ciphertext = base64.b64encode(ciphertext).decode('utf-8')
+        if not b64_ciphertext:
+            QtWidgets.QMessageBox.warning(self, "Advertencia", "No hay texto encriptado para desencriptar.")
+            return
 
-        # Mostrar el texto encriptado (Base64) en la etiqueta
-        self.label_4.setText(b64_ciphertext)
+        try:
+
+            ciphertext = base64.b64decode(b64_ciphertext)
+            
+            # Clave e IV para desencriptar
+            key = b"12345678912345678912345678912345"  # 32 bytes
+            iv = b"TI_UTXJ2024ENCRI"
+
+            # Desencriptar los datos
+            cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
+            decryptor = cipher.decryptor()
+            padded_data = decryptor.update(ciphertext) + decryptor.finalize()
+
+            # Eliminar el padding
+            unpadder = padding.PKCS7(128).unpadder()
+            data = unpadder.update(padded_data)
+            data += unpadder.finalize()
+
+            # Convertir el texto desencriptado de vuelta a cadena
+            self.label_4.setText(data.decode('utf-8'))  # Mostrar el mensaje desencriptado
+
+        except Exception as e:
+            QtWidgets.QMessageBox.warning(self, "Error", f"Error al desencriptar el texto: {str(e)}")
         
     def limpiar(self):
         self.label_4.clear()
